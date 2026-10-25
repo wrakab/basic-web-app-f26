@@ -33,4 +33,16 @@ describe("QueryProcessor", () => {
             "wrakab"
           ));
     })
+
+    test.each([
+        ["What is 24 plus 12?", "36"],
+        ["What is 5 plus 3 multiplied by 2?", "11"],
+        ["What is 9 minus 15?", "-6"],
+        ["What is 2 to the power of 64?", "18446744073709551616"],
+        ["Which of the following numbers is the largest: 45, 922, 17?", "922"],
+        ["Which of the following numbers is both a square and a cube: 64, 729, 50?", "64, 729"],
+        ["Which of the following numbers are primes: 4, 7, 13, 21?", "7, 13"],
+    ])('answers %s', (query, expected) => {
+        expect(QueryProcessor(query)).toBe(expected);
+    })
 });
