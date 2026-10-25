@@ -102,6 +102,8 @@ export default function QueryProcessor(query: string): string {
     return numbersIn(q.split(":").pop() || q).filter(isSquareAndCube).join(", ");
   }
 
+  if (q.includes("prime minister")) return "Keir Starmer";
+
   if (q.includes("prime")) {
     return numbersIn(q.split(":").pop() || q).filter(isPrime).join(", ");
   }

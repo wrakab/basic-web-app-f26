@@ -42,6 +42,8 @@ describe("QueryProcessor", () => {
         ["Which of the following numbers is the largest: 45, 922, 17?", "922"],
         ["Which of the following numbers is both a square and a cube: 64, 729, 50?", "64, 729"],
         ["Which of the following numbers are primes: 4, 7, 13, 21?", "7, 13"],
+        ["Who is the Prime Minister of Great Britain?", "Keir Starmer"],
+        ["What is the 17th number in the Fibonacci sequence?", "1597"],
     ])('answers %s', (query, expected) => {
         expect(QueryProcessor(query)).toBe(expected);
     })
